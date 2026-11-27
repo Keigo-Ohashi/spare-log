@@ -12,6 +12,12 @@
   h2 { font-size: 1.15rem; margin-top: 2rem; }
   a { color: #0a56b3; }
   .meta { color: #555; font-size: 0.9rem; }
+  /* 画面のスクリーンショット。縦長なので幅を抑え、横に並べられる所は並べる */
+  .shots { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0.75rem 0 1.5rem; }
+  .shot { margin: 0; width: 13rem; max-width: 100%; }
+  .shot img { display: block; width: 100%; height: auto; border: 1px solid #c8c8cc; border-radius: 1.1rem; background: #f2f2f6; }
+  .shot figcaption { margin-top: 0.4rem; color: #555; font-size: 0.85rem; line-height: 1.5; text-align: center; }
+  ol.steps > li { margin-bottom: 0.5rem; }
 </style>
 </head>
 <body>
@@ -21,16 +27,54 @@
 <h2>お問い合わせ</h2>
 <p>不具合やご質問は、次の連絡先へお送りください。</p>
 <p><a href="mailto:sparelog.support@gmail.com">sparelog.support@gmail.com</a></p>
-<p>お送りいただく際は、iPhone の機種、iOS のバージョン、アプリのバージョン（アプリの設定タブに表示されます）を添えていただくと、確認しやすくなります。</p>
+<p>お送りいただく際は、iPhone の機種、iOS のバージョン、アプリのバージョンを添えていただくと、確認しやすくなります。アプリのバージョンは、下の画面の「バージョン」の行で確かめられます。</p>
+<div class="shots">
+  <figure class="shot">
+    <img src="images/settings.png" alt="「設定」タブの画面。「バージョン」の行に、アプリのバージョンが表示されている。" width="660" height="1434">
+    <figcaption>「設定」タブ</figcaption>
+  </figure>
+</div>
 
 <h2>使い方の要点</h2>
-<ol>
-  <li>「一覧／入力」タブの右上の「＋」を押し、日時と「前日扱い」を確認して「確定」を押します。記録画面が開きます。</li>
-  <li>記録画面の「＋」の枠をタップし、「新規作成」でピンをタップして残りピン構成を作ります。これまでに記録した構成は一覧から選べます。構成は 2 つまで並べて表示できます。枠の右上の「×」を押すと、その構成を枠から外せます（記録は消えません）。</li>
-  <li>「カバー」または「ミス」を押して、投球を記録します。矢印で過去の投球に戻って結果を直したり、削除したりできます。</li>
-  <li>「分析」タブで月を切り替えて、その月の練習回数、練習日数、投球数と、構成ごとのカバー数・投球数・カバー率を確かめます。構成の行をタップすると「推移」に切り替わり、その構成の月ごとの投球数・カバー数の棒と、カバー率の折れ線を確かめられます。</li>
+<ol class="steps">
+  <li><strong>練習を追加する。</strong>「一覧／入力」タブの右上の「＋」を押します。日時を確かめて「確定」を押すと、記録画面が開きます。日付が変わった後の練習を前日の分として残すときは、「前日扱い」をオンにします。
+    <div class="shots">
+      <figure class="shot">
+        <img src="images/practice-list.png" alt="練習の一覧の画面。右上に「＋」のボタンがある。" width="660" height="1434">
+        <figcaption>「一覧／入力」タブ</figcaption>
+      </figure>
+    </div>
+  </li>
+  <li><strong>残りピンの構成を選ぶ。</strong>記録画面の「＋」の枠を押すと、下の画面が開きます。初めての構成は「新規作成」から、立っているピンを選んで作ります。前に記録した構成は、一覧から選べます。
+    <div class="shots">
+      <figure class="shot">
+        <img src="images/picker.png" alt="構成を選ぶ画面。いちばん上に「新規作成」があり、その下に、これまでに記録した構成が並んでいる。" width="660" height="1434">
+        <figcaption>構成を選ぶ画面</figcaption>
+      </figure>
+    </div>
+  </li>
+  <li><strong>投球を記録する。</strong>1 球ごとに「カバー」か「ミス」を押します。矢印で前の投球に戻ると、結果を直したり、「削除」で消したりできます。構成は 2 つまで並べられます。枠の右上の「×」を押すと、その構成を枠から外せます（記録は消えません）。
+    <div class="shots">
+      <figure class="shot">
+        <img src="images/record.png" alt="記録画面。構成が 2 つ上下に並び、それぞれに、カバー数・投球数・カバー率、投球ごとの結果の表、矢印、「カバー」「ミス」「削除」のボタンがある。" width="660" height="1434">
+        <figcaption>記録画面</figcaption>
+      </figure>
+    </div>
+  </li>
+  <li><strong>振り返る。</strong>「分析」タブの「月間」で、月ごとの練習量と、構成ごとのカバー率を確かめます。構成の行を押すと「推移」に切り替わり、その構成の月ごとの変化をグラフで見られます。
+    <div class="shots">
+      <figure class="shot">
+        <img src="images/analysis.png" alt="分析の「月間」の画面。その月の練習回数、練習日数、投球数と、構成ごとのカバー数・投球数・カバー率が並んでいる。" width="660" height="1434">
+        <figcaption>「分析」タブの「月間」</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/trend.png" alt="分析の「推移」の画面。1 つの構成について、月ごとの投球数とカバー数の棒と、カバー率の折れ線のグラフが表示されている。" width="660" height="1434">
+        <figcaption>「分析」タブの「推移」</figcaption>
+      </figure>
+    </div>
+  </li>
 </ol>
-<p>いちばん新しい練習以外は、誤って書き換えないよう、開いた直後は編集ロックがかかっています。記録画面上部の南京錠のアイコンで切り替えられます。</p>
+<p>いちばん新しい練習以外は、誤って書き換えないよう、開いた直後は編集ロックがかかっています。記録画面の右上の鍵マークで切り替えられます。</p>
 
 <h2>無料の上限と購入</h2>
 <p>無料で保存できる練習は 10 件までです。買い切りの課金（1 回のお支払い）で、この上限がなくなります。上限に達していても、既存の記録の閲覧、投球の記録、集計、削除はできます。練習を削除して 10 件未満にすれば、購入しなくても新しい練習を追加できます。</p>
